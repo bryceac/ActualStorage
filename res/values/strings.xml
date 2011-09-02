@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<!-- Application name -->
+    <string name="app_name">Actual Storage</string>
+<!-- text for label asking for unit -->
+    <string name="unit">Unit</string>
+<!-- text for drop down menu -->
+    <string name="choices">Select a unit</string>
+<!-- text asking for size -->
+    <string name="message">Enter Size</string>
+<!-- text specifying results location -->
+    <string name="result">Result</string>
+<!-- default text for result field -->
+    <string name="result_value">usable storage</string>
+<!-- Calculate button text -->
+    <string name="submit_text">Calculate</string>
+<!-- error message title -->
+    <string name="error">Error!</string>
+<!-- error message -->
+    <string name="error_message">Size Field can neither be empty nor non-numerical!</string>
+<!-- Okay text -->
+    <string name="ok">OK</string>
+</resources>

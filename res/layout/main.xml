@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    >
+<!-- the following creates a label -->
+<TextView android:id="@+id/slabel"
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:text="@string/message"
+/>
+<!-- the following creates a textfield -->
+<EditText android:id="@+id/size"
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+/>
+
+<!-- message asking for unit -->
+<TextView android:id="@+id/ulabel"
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:text="@string/unit"
+/>
+<!-- the following creates a combobox -->
+<Spinner android:id="@+id/spinner"
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:drawSelectorOnTop="true"
+	android:prompt="@string/choices"
+/>
+
+<!-- message to reveal results location -->
+<TextView android:id="@+id/rlabel"
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:text="@string/result"
+/>
+
+<!-- create textfield for results -->
+<EditText android:id="@+id/result"
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:background="#FFFFFF"
+	android:text="@string/result_value"
+/>
+
+<!-- the following creates a button -->
+<Button android:id="@+id/submit"
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:text="@string/submit_text"
+	android:onClick="calcAction"
+/>
+</LinearLayout>
+

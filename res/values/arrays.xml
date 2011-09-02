@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<!-- the following array gives choices for spinner -->
+    <string-array name="choices_array">
+	<item>KB</item>
+	<item>MB</item>
+	<item>GB</item>
+	<item>TB</item>
+	<item>PB</item>
+	<item>EB</item>
+	<item>ZB</item>
+	<item>YB</item>
+    </string-array>
+</resources>
