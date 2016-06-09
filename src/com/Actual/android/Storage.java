@@ -16,7 +16,7 @@ package com.Actual.android;
 
 /**
 *  The Storage class contains methods
-*  that calculate the actual storage cacpacity
+*  that calculate the actual storage capacity and work in reverse as well
 *  of secondary storage devices, without taking
 *  Filesystems into account.
 */
@@ -42,6 +42,86 @@ public class Storage
 		return ListedStorage;
 	}
 
+	/**
+	*  The getiKB method calculates the box storage
+	*  in the Kilobytes unit by dividing the product of the
+	*  ListedStorage field and 1,024 divided by 1000.
+	*/
+	public double getiKB()
+	{
+		return (ListedStorage * 1024)/1000;
+	}
+
+	/**
+	*  The getiMB method calculates the box storage
+	*  in the Megabytes unit by dividing the product of the
+	*  ListedStorage field and 1,024^2 by 1000^2.
+	*/
+	public double getiMB()
+	{
+		return (ListedStorage * Math.pow(1024, 2))/Math.pow(1000, 2);
+	}
+
+	/**
+	*  The getiGB method calculates the box storage
+	*  in the Gigabytes unit by dividing the product of the
+	*  ListedStorage field and 1,024^3 by 1000^3.
+	*/
+	public double getiGB()
+	{
+		return (ListedStorage * Math.pow(1024, 3))/Math.pow(1000, 3);
+	}
+
+	/**
+	*  The getiTB method calculates the box storage
+	*  in the Terabytes unit by dividing the product of the
+	*  ListedStorage field and 1,024^4 by 1000^4.
+	*/
+	public double getiTB()
+	{
+		return (ListedStorage * Math.pow(1024, 4))/Math.pow(1000, 4);
+	}
+
+	/**
+	*  The getiPB method calculates the box storage
+	*  in the Petabytes unit by dividing the product of the
+	*  ListedStorage field and 1,024^5 by 1000^5.
+	*/
+	public double getiPB()
+	{
+		return (ListedStorage * Math.pow(1024, 5))/Math.pow(1000, 5);
+	}
+
+	/**
+	*  The getiEB method calculates the box storage
+	*  in the Exabytes unit by dividing the product of the
+	*  ListedStorage field and 1,024^6 by 1000^6.
+	*/
+	public double getiEB()
+	{
+		return (ListedStorage * Math.pow(1024, 6))/Math.pow(1000, 6);
+	}
+
+	/**
+	*  The getiZB method calculates the box storage
+	*  in the Zetabytes unit by dividing the product of the
+	*  ListedStorage field and 1,024^7 by 1000^7.
+	*/
+	public double getiZB()
+	{
+		return (ListedStorage * Math.pow(1024, 7))/Math.pow(1000, 7);
+	}
+
+	/**
+	*  The getiYB method calculates the box storage
+	*  in the Yottabytes unit by dividing the product of the
+	*  ListedStorage field and 1,024^8 by 1000^8.
+	*/
+	public double getiYB()
+	{
+		return (ListedStorage * Math.pow(1024, 8))/Math.pow(1000, 8);
+	}
+	
 	/**
 	*  The getKB method calculates the actual storage
 	*  in the Kilobytes unit by dividing the product of the
@@ -121,4 +201,5 @@ public class Storage
 	{
 		return (ListedStorage * Math.pow(1000, 8))/Math.pow(1024, 8);
 	}
+
 }

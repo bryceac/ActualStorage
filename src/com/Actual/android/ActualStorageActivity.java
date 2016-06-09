@@ -25,8 +25,8 @@ import java.text.*; // import Java class to format output
 public class ActualStorageActivity extends Activity
 {
 
-	Spinner selection; /* declare variable, in order to control spinner (ComboBox) */
-	ArrayAdapter adapter; /* declare an array adapter object, in order for spinner to work */
+	Spinner selection, math; /* declare variable, in order to control spinner (ComboBox) */
+	ArrayAdapter adapter, madapter; /* declare an array adapter object, in order for spinner to work */
 	EditText size; /* declare variable to control textfield */
 	EditText result; /* declare variable to control textfield */
 	Button calculate; /* declare variable to control button */
@@ -39,7 +39,9 @@ public class ActualStorageActivity extends Activity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main); // load content from XML
-
+        
+    math = (Spinner)findViewById(R.id.mspinner); // load math spinner
+    madapter = ArrayAdapter.createFromResource(this, R.array.math_array, android.R.layout.simple_spinner_dropdown_item); /* load adapter for math */
 	selection = (Spinner)findViewById(R.id.spinner); // load spinner
 	adapter = ArrayAdapter.createFromResource(this, R.array.choices_array, android.R.layout.simple_spinner_dropdown_item); /* load adapter for spinner */
 	size = (EditText)findViewById(R.id.size); // load textfield
@@ -47,8 +49,10 @@ public class ActualStorageActivity extends Activity
 	calculate = (Button)findViewById(R.id.submit); // load textfield
 
 	adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item); // load spinner drop down
+	madapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item); // load spinner drop down
 
 	selection.setAdapter(adapter); // assign adapter to spinner
+	math.setAdapter(madapter); // assign adapter to new spinner
 
 	result.setEnabled(false); // make result field read-only
 
@@ -59,6 +63,7 @@ public class ActualStorageActivity extends Activity
 		/* the following code is used to prevent application from crashing due to empty field for initial storage capacity */
 		try
 		{
+			String type = math.getSelectedItem().toString(); // get type of math
 			String initial = size.getText().toString(); /* the following gets user input, in order to do calculations */
 			String end = "Nothing"; /* This is the default text in case the unexpected happens */
 			unit = selection.getSelectedItem().toString(); /* this gets the unit of measure that the user specifies */
@@ -66,51 +71,100 @@ public class ActualStorageActivity extends Activity
 			capacity.setStorage(convert); /* send input to external class */
 			DecimalFormat twop = new DecimalFormat("#.##"); /* created new object, in order to format output to display two decimal places at most */
 
-			/* the following conditional statement reads the unit of measure specify by the user, puts the data into the proper formula, and returns the results */
+			/* the following conditional statement reads the unit of measure specify by the user, puts the data into the proper formula, and returns the results, based on kind of calculation */
 
-			if (unit.equals("KB")) // runs if user specifies KB
+			if (type.equals("Box"))
 			{
-				end = twop.format(capacity.getKB());
-			}
+				if (unit.equals("KB")) // runs if user specifies KB
+				{
+					end = twop.format(capacity.getiKB());
+				}
 
-			else if (unit.equals("MB")) /* runs if user specifies MB */
+				else if (unit.equals("MB")) /* runs if user specifies MB */
+				{
+					end = twop.format(capacity.getiMB());
+				}
+
+				else if (unit.equals("GB")) /* runs if user specifies GB */
+				{
+					end = twop.format(capacity.getiGB());
+				}
+
+				else if (unit.equals("TB")) /* runs if user specifies TB */
+				{
+					end = twop.format(capacity.getiTB());
+				}
+
+				else if (unit.equals("PB")) /* runs if user specifies PB */
+				{
+					end = twop.format(capacity.getiPB());
+				}
+
+				else if (unit.equals("EB")) /* runs if user specifies EB */
+				{
+					end = twop.format(capacity.getiEB());
+				}
+
+				else if (unit.equals("ZB")) /* runs if user specifies ZB */
+				{
+					end = twop.format(capacity.getiZB());
+				}
+
+				else if (unit.equals("YB")) /* runs if user specifies YB */
+				{
+					end = twop.format(capacity.getiYB());
+				}
+
+				else; // send default text, if unexpected happens.
+
+				result.setText(end); // display results
+			}
+			else
 			{
-				end = twop.format(capacity.getMB());
+				if (unit.equals("KB")) // runs if user specifies KB
+				{
+					end = twop.format(capacity.getKB());
+				}
+
+				else if (unit.equals("MB")) /* runs if user specifies MB */
+				{
+					end = twop.format(capacity.getMB());
+				}
+
+				else if (unit.equals("GB")) /* runs if user specifies GB */
+				{
+					end = twop.format(capacity.getGB());
+				}
+
+				else if (unit.equals("TB")) /* runs if user specifies TB */
+				{
+					end = twop.format(capacity.getTB());
+				}
+
+				else if (unit.equals("PB")) /* runs if user specifies PB */
+				{
+					end = twop.format(capacity.getPB());
+				}
+
+				else if (unit.equals("EB")) /* runs if user specifies EB */
+				{
+					end = twop.format(capacity.getEB());
+				}
+
+				else if (unit.equals("ZB")) /* runs if user specifies ZB */
+				{
+					end = twop.format(capacity.getZB());
+				}
+
+				else if (unit.equals("YB")) /* runs if user specifies YB */
+				{
+					end = twop.format(capacity.getYB());
+				}
+
+				else; // send default text, if unexpected happens.
+
+				result.setText(end); // display results
 			}
-
-			else if (unit.equals("GB")) /* runs if user specifies GB */
-			{
-				end = twop.format(capacity.getGB());
-			}
-
-			else if (unit.equals("TB")) /* runs if user specifies TB */
-			{
-				end = twop.format(capacity.getTB());
-			}
-
-			else if (unit.equals("PB")) /* runs if user specifies PB */
-			{
-				end = twop.format(capacity.getPB());
-			}
-
-			else if (unit.equals("EB")) /* runs if user specifies EB */
-			{
-				end = twop.format(capacity.getEB());
-			}
-
-			else if (unit.equals("ZB")) /* runs if user specifies ZB */
-			{
-				end = twop.format(capacity.getZB());
-			}
-
-			else if (unit.equals("YB")) /* runs if user specifies YB */
-			{
-				end = twop.format(capacity.getYB());
-			}
-
-			else; // send default text, if unexpected happens.
-
-			result.setText(end); // display results
 		}
 
 		catch (NumberFormatException e)
@@ -148,14 +202,10 @@ public class ActualStorageActivity extends Activity
 				Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse("http://dl.dropbox.com/u/332246/LICENSE.txt"));
 				startActivity(i);
 				return true;
-			case R.id.report:
-				Intent b = new Intent(Intent.ACTION_VIEW, Uri.parse("http://brycec.dyndns.org/~bryce/mantis"));
-				startActivity(b);
-				return true;
 			case R.id.contact:
 				Intent c = new Intent(Intent.ACTION_SEND);
 				c.setType("plain/text");
-				c.putExtra(android.content.Intent.EXTRA_EMAIL, "tonyhawk2100@gmail.com");
+				c.putExtra(android.content.Intent.EXTRA_EMAIL, "android@brycecampbell.me");
 				startActivity(Intent.createChooser(c, "Contact Developer..."));
 				return true;
 				

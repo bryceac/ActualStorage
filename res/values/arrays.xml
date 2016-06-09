@@ -11,4 +11,8 @@
 	<item>ZB</item>
 	<item>YB</item>
     </string-array>
+    <string-array name="math_array">
+        <item>Actual</item>
+        <item>Box</item>
+    </string-array>
 </resources>

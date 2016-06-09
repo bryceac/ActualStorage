@@ -4,6 +4,19 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     >
+<!-- Label to ask for type of calculation -->
+<TextView android:id="@+id/mlabel"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:text="@string/math"
+    />
+<!-- Spinner used to determine calculation type -->
+<Spinner android:id="@+id/mspinner"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:drawSelectorOnTop="true"
+    android:prompt="@string/mchoices"
+    />
 <!-- the following creates a label -->
 <TextView android:id="@+id/slabel"
 	android:layout_width="fill_parent"

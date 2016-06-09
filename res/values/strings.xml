@@ -2,6 +2,10 @@
 <resources>
 <!-- Application name -->
     <string name="app_name">Actual Storage</string>
+<!--  label used asking for math type -->
+	<string name="math">Direction</string>
+<!--  text asking for calculation direction -->
+	<string name="mchoices">What kind of Calculation?</string>
 <!-- text for label asking for unit -->
     <string name="unit">Unit</string>
 <!-- text for drop down menu -->

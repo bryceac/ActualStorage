@@ -12,6 +12,7 @@ public final class R {
         /**  the following array gives choices for spinner 
          */
         public static final int choices_array=0x7f040000;
+        public static final int math_array=0x7f040001;
     }
     public static final class attr {
     }
@@ -19,16 +20,17 @@ public final class R {
         public static final int icon=0x7f020000;
     }
     public static final class id {
-        public static final int contact=0x7f070009;
-        public static final int license=0x7f070007;
-        public static final int report=0x7f070008;
-        public static final int result=0x7f070005;
-        public static final int rlabel=0x7f070004;
-        public static final int size=0x7f070001;
-        public static final int slabel=0x7f070000;
-        public static final int spinner=0x7f070003;
-        public static final int submit=0x7f070006;
-        public static final int ulabel=0x7f070002;
+        public static final int contact=0x7f07000a;
+        public static final int license=0x7f070009;
+        public static final int mlabel=0x7f070000;
+        public static final int mspinner=0x7f070001;
+        public static final int result=0x7f070007;
+        public static final int rlabel=0x7f070006;
+        public static final int size=0x7f070003;
+        public static final int slabel=0x7f070002;
+        public static final int spinner=0x7f070005;
+        public static final int submit=0x7f070008;
+        public static final int ulabel=0x7f070004;
     }
     public static final class layout {
         public static final int main=0x7f030000;
@@ -42,30 +44,36 @@ public final class R {
         public static final int app_name=0x7f050000;
         /**  text for drop down menu 
          */
-        public static final int choices=0x7f050002;
+        public static final int choices=0x7f050004;
         /**  error message title 
          */
-        public static final int error=0x7f050007;
+        public static final int error=0x7f050009;
         /**  error message 
          */
-        public static final int error_message=0x7f050008;
+        public static final int error_message=0x7f05000a;
+        /**   label used asking for math type 
+         */
+        public static final int math=0x7f050001;
+        /**   text asking for calculation direction 
+         */
+        public static final int mchoices=0x7f050002;
         /**  text asking for size 
          */
-        public static final int message=0x7f050003;
+        public static final int message=0x7f050005;
         /**  Okay text 
          */
-        public static final int ok=0x7f050009;
+        public static final int ok=0x7f05000b;
         /**  text specifying results location 
          */
-        public static final int result=0x7f050004;
+        public static final int result=0x7f050006;
         /**  default text for result field 
          */
-        public static final int result_value=0x7f050005;
+        public static final int result_value=0x7f050007;
         /**  Calculate button text 
          */
-        public static final int submit_text=0x7f050006;
+        public static final int submit_text=0x7f050008;
         /**  text for label asking for unit 
          */
-        public static final int unit=0x7f050001;
+        public static final int unit=0x7f050003;
     }
 }
